@@ -1,25 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
 
+import {  Routes, Route } from "react-router-dom";
+
+import Login from './component/Login';
+import Main from './component/Main';
+import JoinForm from './component/member/JoinForm';
+import MemberUpdate from './component/member/MemberUpdate.js';
+import BoardView from './component/board/BoardView';
+import WriteBoard from './component/board/WriteBoard';
+// import UpdateBoard from './component/board/UpdateBoard';
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/main" element={<Main />} />
+            <Route path="/joinForm" element={<JoinForm />} />
+            <Route path="/memberupdate" element={<MemberUpdate />} />
+            <Route path="/boardView/:num" element={<BoardView />} />
+            <Route path="/writeBoard" element={<WriteBoard />} />
+            {/* <Route path="/updateBoard/:num" element={<UpdateBoard />} /> */}
+            
+        </Routes>
+    );
 }
 
 export default App;
