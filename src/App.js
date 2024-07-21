@@ -8,7 +8,7 @@ import JoinForm from './component/member/JoinForm';
 import MemberUpdate from './component/member/MemberUpdate.js';
 import BoardView from './component/board/BoardView';
 import WriteBoard from './component/board/WriteBoard';
-// import UpdateBoard from './component/board/UpdateBoard';
+import UpdateBoard from './component/board/UpdateBoard';
 
 function App() {
     return (
@@ -19,7 +19,7 @@ function App() {
             <Route path="/memberupdate" element={<MemberUpdate />} />
             <Route path="/boardView/:num" element={<BoardView />} />
             <Route path="/writeBoard" element={<WriteBoard />} />
-            {/* <Route path="/updateBoard/:num" element={<UpdateBoard />} /> */}
+            <Route path="/updateBoard/:num" element={<UpdateBoard />} />
             
         </Routes>
     );

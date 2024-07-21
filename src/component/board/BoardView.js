@@ -43,7 +43,21 @@ function BoardView() {
     },[]
     )
 
-    function deleteBoard(){
+    function deleteBoard(boardnum){
+       const pass =  window.prompt("삭제하기 전 비밀번호를 입력해주세요.");
+       if(pass != board.pass){
+         window.alert("비밀번호가 일치하지 않아 삭제를 진행하실 수 없습니다.");
+       }
+
+       axios.delete(`/api/boards/deleteBoard/${num}`)
+       .then(()=>{
+        window.alert("삭제가 정상적으로 완료되었습니다.");
+        navigate("/main");
+       })
+
+       .catch((err)=>{
+        console.error(err);
+       })
 
     }
 
